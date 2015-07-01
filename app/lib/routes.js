@@ -32,3 +32,10 @@ Router.route('search', {
   action: 'action',
   where: 'client'
 });
+
+Router.route('page/:_id/edit', {
+  name: 'pageEdit',
+  controller: 'PageEditController',
+  action: 'action',
+  where: 'client'
+});
