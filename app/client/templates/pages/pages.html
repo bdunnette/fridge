@@ -1,0 +1,11 @@
+<template name="Pages">
+  <h2>New Pages:</h2>
+  {{> quickForm collection="Pages" id="insertPagesForm" type="insert"}}
+  {{> allPages}}
+</template>
+
+<template name="allPages">
+  {{#each pages}}
+  <a href="{{pathFor route='page'}}"><span class="label label-primary">{{this.title}}</span></a>
+  {{/each}}
+</template>

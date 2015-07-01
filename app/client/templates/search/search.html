@@ -1,0 +1,33 @@
+<template name="Search">
+  <div class="search-input">
+    <strong>Search:</strong>
+    {{> esInput index="pages" placeholder="Search by slide title" }}
+  </div>
+
+  {{#ifEsIsSearching index="pages"}}
+    <div>Loading...</div>
+  {{else}}
+    <table class="table table-striped">
+      <tbody>
+        {{#esEach index="pages"}}
+          {{> PageRow}}
+        {{/esEach}}
+      </tbody>
+    </table>
+    {{> esLoadMoreButton index="pages"}}
+  {{/ifEsIsSearching}}
+
+  {{#ifEsInputIsEmpty index="pages"}}
+  <div>Enter a search term above to find pages</div>
+  {{/ifEsInputIsEmpty}}
+
+  {{#ifEsHasNoResults index="pages"}}
+  <div class="no-results">No results found</div>
+  {{/ifEsHasNoResults}}
+
+</template>
+
+<template name="PageRow">
+  <h2><a href="{{pathFor route='page'}}">{{title}}</a></h2>
+  <p>{{{body}}}</p>
+</template>
