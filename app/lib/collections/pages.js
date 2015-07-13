@@ -13,11 +13,13 @@ PagesSchema = new SimpleSchema({
         class: 'editor', // optional
         // summernote options goes here
         height: '400',
+        settings:{
         toolbar: [
           ['style', ['bold', 'italic', 'underline', 'clear']],
           ['para', ['ul', 'ol']],
-          ['insert', ['picture', 'link', 'pagelink']]
+          ['insert', ['picture', 'link', 'hello']]
         ]
+        }
       }
     }
   }
