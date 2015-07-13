@@ -1,4 +1,4 @@
-Pages = new Ground.Collection("pages");
+Pages = new Mongo.Collection("pages");
 
 PagesSchema = new SimpleSchema({
   title: {
