@@ -1,0 +1,1 @@
+angular.module('fridge',['angular-meteor','textAngular']);
