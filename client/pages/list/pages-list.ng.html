@@ -4,9 +4,9 @@
     <label>Title</label>
     <input ng-model="newPage.title">
     <label>Body</label>
-    <text-angular ng-model="newPage.body" ta-toolbar="[['h1','h2','h3'],['bold','italics','colourRed']]"></text-angular>
+    <text-angular ng-model="newPage.body" ta-toolbar="[['h1','h2','h3'],['bold','italics','colourRed']]" ta-file-drop="dropHandler"></text-angular>
     <!--<input ng-model="newPage.body">-->
-    <button ng-click="pages.push(newPage); newPage='';">Add</button>
+    <button ng-click="console.log(newPage); pages.push(newPage); newPage='';">Add</button>
   </form>
   <ul>
     <li ng-repeat="page in pages">
