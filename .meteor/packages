@@ -6,6 +6,7 @@
 
 meteor-platform
 autopublish
+aldeed:collection2
 insecure
 urigo:angular
 angularui:angular-ui-router
