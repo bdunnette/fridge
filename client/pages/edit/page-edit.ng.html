@@ -10,7 +10,7 @@
   </form>
   <ul>
     <li ng-repeat="page in pages">
-      <h2><a href="/page/{{page._id}}">{{page.title}}</a></h2>
+      {{page.title}}
       <p ng-bind-html="page.body"></p>
     </li>
   </ul>
