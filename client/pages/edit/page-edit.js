@@ -3,7 +3,7 @@ angular
     function ($scope, $meteor, $stateParams) {
       
       // Bind 'page' to the page specified in the route; set 3rd parameter to false to prevent real-time updating
-      $scope.page = $meteor.object(Pages, $stateParams.pageId, false);
+      $scope.page = $meteor.object(Pages, $stateParams.pageId, false).subscribe('page', $stateParams.pageId);
 
       $scope.dropHandler = function (file, insertAction) {
         console.log(file);
