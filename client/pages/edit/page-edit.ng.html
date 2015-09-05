@@ -1,17 +1,13 @@
-<div ng-controller="PagesListCtrl">
-  <h2>Pages</h2>
-  <form>
-    <label>Title</label>
-    <input ng-model="newPage.title">
-    <label>Body</label>
-    <text-angular ng-model="newPage.body" ta-toolbar="[['h1','h2','h3'],['bold','italics','colourRed']]" ta-file-drop="dropHandler"></text-angular>
-    <!--<input ng-model="newPage.body">-->
-    <button ng-click="console.log(newPage); pages.push(newPage); newPage='';">Add</button>
-  </form>
-  <ul>
-    <li ng-repeat="page in pages">
-      {{page.title}}
-      <p ng-bind-html="page.body"></p>
-    </li>
-  </ul>
+<div ng-controller="PageEditCtrl">
+  <div class="pull-right">
+    <button class="btn btn-success" ng-click="save()"><i class="fa fa-check"></i> Save</button>
+    <button class="btn btn-warning" ng-click="reset()"><i class="fa fa-undo"></i> Undo Edits</button>
+    <button class="btn btn-danger" ui-sref="pages"><i class="fa fa-times"></i> Cancel</button>
+  </div>
+  
+  <h2>Editing Page: {{page.title}}</h2>
+  <label>Title</label>
+  <input ng-model="page.title">
+  <label>Body</label>
+  <text-angular ng-model="page.body" ta-toolbar="[['h1','h2','h3'],['bold','italics','colourRed']]" ta-file-drop="dropHandler"></text-angular>
 </div>

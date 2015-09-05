@@ -1,4 +1,7 @@
 <div ng-controller="PageViewCtrl">
+  <a href="/page/{{page._id}}/edit">
+    <button type="button" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i> Edit</button>
+  </a>
   <h2>{{page.title}}</h2>
   <div class="page-body" ng-bind-html="page.body"></div>
 </div>

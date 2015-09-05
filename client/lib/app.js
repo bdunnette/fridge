@@ -15,6 +15,11 @@ angular.module('fridge').config(['$urlRouterProvider', '$stateProvider', '$locat
           url: '/page/:pageId',
           templateUrl: 'client/pages/view/page-view.ng.html',
           controller: 'PageViewCtrl'
+        })
+        .state('pageEdit', {
+          url: '/page/:pageId/edit',
+          templateUrl: 'client/pages/edit/page-edit.ng.html',
+          controller: 'PageEditCtrl'
         });
  
       $urlRouterProvider.otherwise("/");
