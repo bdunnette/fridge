@@ -1,0 +1,37 @@
+<template name="mainLayout">
+  <header>
+    <h1>Kadira Blog</h1></header>
+  <main>
+    {{>Template.dynamic template=content}}
+  </main>
+  <footer>We love Meteor</footer>
+</template>
+
+<template name="wikiHome">
+  <p>This is the home page of our wiki</p>
+  {{> quickForm collection="Pages" type="insert" id="insertPageForm"}}
+  
+  <ul>
+  {{#each pages}}
+    <li><a href="/{{_id}}">{{title}}</a>
+    <p>{{{body}}}</p>
+    </li>
+  {{/each}}
+  </ul>
+</template>
+
+<template name="wikiPage">
+  {{#with page}}
+  <h2>{{title}}</h2>
+  <p>
+    {{{body}}}
+  </p>
+  {{/with}}
+</template>
+
+<template name="wikiPageEdit">
+  <p>
+    <a href="/">Back</a>
+    <br/> Editing a single blog post
+  </p>
+</template>
