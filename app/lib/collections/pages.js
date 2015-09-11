@@ -13,12 +13,12 @@ PagesSchema = new SimpleSchema({
         class: 'editor', // optional
         // summernote options goes here
         height: '400',
-        settings:{
-        toolbar: [
-          ['style', ['bold', 'italic', 'underline', 'clear']],
-          ['para', ['ul', 'ol']],
-          ['insert', ['picture', 'link', 'hello']]
-        ]
+        settings: {
+          toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['picture', 'link', 'hello']]
+          ]
         }
       }
     }
@@ -28,29 +28,30 @@ PagesSchema = new SimpleSchema({
 Pages.attachSchema(PagesSchema);
 
 Pages.initEasySearch(['title', 'body'], {
-    'limit' : 20
+  'limit': 20,
+  'use': 'mongo-db'
 });
 
 Pages.allow({
   insert: function (userId, doc) {
-    return true
+    return true;
   },
   update: function (userId, doc, fieldNames, modifier) {
-    return true
+    return true;
   },
   remove: function (userId, doc) {
-    return true
+    return true;
   }
 });
 
 Pages.deny({
   insert: function (userId, doc) {
-    return false
+    return false;
   },
   update: function (userId, doc, fieldNames, modifier) {
-    return false
+    return false;
   },
   remove: function (userId, doc) {
-    return false
+    return false;
   }
 });
